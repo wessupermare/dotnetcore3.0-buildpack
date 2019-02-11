@@ -57,7 +57,6 @@ export NUGET_PACKAGES="${CACHE_DIR}/nuget/cache"
 
 echo "publish ${PROJECT_FILE}"
 dotnet publish $PROJECT_FILE --output ${BUILD_DIR}/heroku_output --configuration Release --runtime linux-x64
-dotnet ef database update --project $PROJECT_FILE
 
 if [ ! -f ${BUILD_DIR}/Procfile ]; then
 	cat << EOT >> ${BUILD_DIR}/Procfile
